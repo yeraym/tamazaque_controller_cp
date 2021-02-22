@@ -1,0 +1,369 @@
+{
+	"buttons": [
+		{
+			"name": "b1",
+			"pin": "GP21",
+			"position": "bl",
+			"led_position": 0
+		},
+		{
+			"name": "b2",
+			"pin": "GP20",
+			"position": "bc",
+			"led_position": 1
+		},
+		{
+			"name": "b3",
+			"pin": "GP19",
+			"position": "br",
+			"led_position": 2
+		},
+		{
+			"name": "b4",
+			"pin": "GP18",
+			"position": "tl",
+			"led_position": 3
+		},
+		{
+			"name": "b5",
+			"pin": "GP17",
+			"position": "tc",
+			"led_position": 4
+		},
+		{
+			"name": "b6",
+			"pin": "GP16",
+			"position": "tr",
+			"led_position": 5
+		}
+	],
+	"pages": {
+		"page1": {
+			"name": "snapshots",
+			"buttons": {
+				"b1": {
+					"label": "S1",
+					"led_color": "ORANGE",
+					"press": {
+						"midi": [
+							{
+								"command": "CC",
+								"control": 69,
+								"value": 0
+							}
+						],
+						"msg": "S1"
+					},
+					"long_press": {
+						"midi": [
+							{
+								"command": "CC",
+								"control": 71,
+								"value": 4
+							}
+						],
+						"msg": "mode"
+					}
+				},
+				"b2": {
+					"label": "S2",
+					"led_color": "CYAN",
+					"press": {
+						"midi": [
+							{
+								"command": "CC",
+								"control": 69,
+								"value": 1
+							}
+						],
+						"msg": "S2"
+					},
+					"long_press": {
+						"midi": [
+							{
+								"command": "CC",
+								"control": 68,
+								"value": 0
+							}
+						],
+						"msg": "tuner"
+					}
+				},
+				"b3": {
+					"label": "S3",
+					"led_color": "BLUE",
+					"press": {
+						"midi": [
+							{
+								"command": "CC",
+								"control": 69,
+								"value": 2
+							}
+						],
+						"msg": "S3"
+					}
+				},
+				"b4": {
+					"label": "FS4",
+					"led_color": "PURPLE",
+					"press": {
+						"midi": [
+							{
+								"command": "CC",
+								"control": 52,
+								"value": 0
+							}
+						],
+						"msg": "FS4"
+					}
+				},
+				"b5": {
+					"label": "FS5",
+					"led_color": "TEAL",
+					"press": {
+						"midi": [
+							{
+								"command": "CC",
+								"control": 53,
+								"value": 0
+							}
+						],
+						"msg": "FS5"
+					}
+				},
+				"b6": {
+					"label": "T/T",
+					"led_color": "GOLD",
+					"press": {
+						"midi": [
+							{
+								"command": "CC",
+								"control": 64,
+								"value": 64
+							}
+						],
+						"msg": "t.temp"
+					},
+					"long_press": {
+						"control": {
+							"type": "changepage",
+							"value": "page2"
+						},
+						"msg": "looper"
+					}
+				}
+			}
+		},
+		"page2": {
+			"name": "looper",
+			"page_state": "stop",
+			"buttons": {
+				"b1": {
+					"page_state_press": {
+						"stop": {
+							"label": "PLA",
+							"led_color": "GREEN",
+							"midi": [
+								{
+									"command": "CC",
+									"control": 61,
+									"value": 64
+								}
+							],
+							"msg": "PLAY",
+							"to_page_state": "play"
+						},
+						"rec": {
+							"label": "PLA",
+							"led_color": "GREEN",
+							"midi": [
+								{
+									"command": "CC",
+									"control": 61,
+									"value": 64
+								}
+							],
+							"msg": "PLA",
+							"to_page_state": "play"
+						},
+						"play": {
+							"label": "STP",
+							"led_color": "WHITE",
+							"midi": [
+								{
+									"command": "CC",
+									"control": 61,
+									"value": 0
+								}
+							],
+							"msg": "STOP",
+							"to_page_state": "stop"
+						}
+					}
+				},
+				"b2": {
+					"page_state_press": {
+						"stop": {
+							"label": "REC",
+							"led_color": "RED",
+							"midi": [
+								{
+									"command": "CC",
+									"control": 60,
+									"value": 64
+								}
+							],
+							"msg": "REC",
+							"to_page_state": "rec"
+						},
+						"rec": {
+							"label": "OVR",
+							"led_color": "YELLOW",
+							"midi": [
+								{
+									"command": "CC",
+									"control": 60,
+									"value": 0
+								}
+							],
+							"msg": "OVERDUB",
+							"to_page_state": "rec"
+						},
+						"play": {
+							"label": "OVR",
+							"led_color": "YELLOW",
+							"midi": [
+								{
+									"command": "CC",
+									"control": 60,
+									"value": 0
+								}
+							],
+							"msg": "OVERDUB",
+							"to_page_state": "rec"
+						}
+					}
+				},
+				"b3": {
+					"label": "PL1",
+					"led_color": "PURPLE",
+					"press": {
+						"midi": [
+							{
+								"command": "CC",
+								"control": 62,
+								"value": 64
+							}
+						],
+						"msg": "Play1"
+					}
+				},
+				"b4": {
+					"label": "UND",
+					"led_color": "AMBER",
+					"release": {
+						"midi": [
+							{
+								"command": "CC",
+								"control": 63,
+								"value": 64
+							}
+						],
+						"msg": "UNDO"
+					}
+				},
+				"b5": {
+					"label": "spd",
+					"default_state": "full",					
+					"state_press": {
+						"full": {
+							"midi": [
+								{
+									"command": "CC",
+									"control": 66,
+									"value": 64
+								}
+							],
+							"msg": "half",
+							"led_color": "PINK",
+							"to_state": "half"
+						},
+						"half": {
+							"midi": [
+								{
+									"command": "CC",
+									"control": 66,
+									"value": 0
+								}
+							],
+							"msg": "full",
+							"led_color": "AQUA",
+							"to_state": "full"
+						}
+					}
+				},
+				"b6": {
+					"label": "snp",
+					"led_color": "JADE",
+					"release": {
+						"control": {
+							"type": "changepage",
+							"value": "page1"
+						},
+						"msg": "snaps"
+					}
+				}
+			}
+		}
+	},
+	"state": {
+		"page": "page1",
+		"page_state": "",
+		"page1": {
+			"page_state": "",
+			"buttons": {
+				"b1": {
+					"state": ""
+				},
+				"b2": {
+					"state": ""
+				},
+				"b3": {
+					"state": ""
+				},
+				"b4": {
+					"state": ""
+				},
+				"b5": {
+					"state": ""
+				},
+				"b6": {
+					"state": ""
+				}
+			}
+		},
+		"page2": {
+			"page_state": "stop",
+			"buttons": {
+				"b1": {
+					"state": ""
+				},
+				"b2": {
+					"state": ""
+				},
+				"b3": {
+					"state": ""
+				},
+				"b4": {
+					"state": ""
+				},
+				"b5": {
+					"state": "full"
+				},
+				"b6": {
+					"state": ""
+				}
+			}
+		}
+	}
+}

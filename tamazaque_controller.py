@@ -13,7 +13,8 @@ from adafruit_midi import MIDIMessage
 
 import tamazaque.config
 import tamazaque.buttons
-import tamazaque.display
+#import tamazaque.display
+import tamazaque.display_st7735
 import tamazaque.leds
 
 config_file = open('config.json','r')
@@ -21,7 +22,8 @@ myconfig = json.load(config_file)
 
 config = tamazaque.config.Config(myconfig)
 button_controller = tamazaque.buttons.Buttons()
-display = tamazaque.display.Display()
+#display = tamazaque.display.Display()
+display = tamazaque.display_st7735.Display()
 
 
 for b in config.data['buttons']:
@@ -29,7 +31,7 @@ for b in config.data['buttons']:
 
 display.update(config, True)
 
-leds = tamazaque.leds.Leds(len(config.data['buttons']), board.GP28)
+leds = tamazaque.leds.Leds(len(config.data['buttons']), board.GP5)
 leds.update(config)
 
 midi_channel = 1
@@ -93,7 +95,8 @@ while True:
     for bname in button_controller.states:
         state = button_controller.states[bname]
         display.update(config, False)
-        leds.update(config)
+
         if state['changed']:
             #print(bname,' ',state['event'],' ',state['special_event'],' ',state['press_timestamp'],' ',state['release_timestamp'])
             process_button_event(bname,state)
+            leds.update(config)

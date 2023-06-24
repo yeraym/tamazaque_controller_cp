@@ -2,11 +2,12 @@ import board
 import neopixel
 import time
 
-
+from tamazaque.colors import colors
+"""
 colors = {}
 colors["RED"] = (255, 0, 0)
 colors["YELLOW"] = (255, 150, 0)
-colors["ORANGE"] = (255, 40, 0)
+colors["ORANGE"] = (230, 123, 9)
 colors["GREEN"] = (0, 255, 0)
 colors["TEAL"] = (0, 255, 120)
 colors["CYAN"] = (0, 255, 255)
@@ -21,6 +22,7 @@ colors["AQUA"] = (50, 255, 255)
 colors["JADE"] = (0, 255, 40)
 colors["AMBER"] = (255, 100, 0)
 colors["OLD_LACE"] = (253, 245, 230)
+"""
 
 class Leds:
     def __init__(self,num_pixels, pixel_pin, brightness=0.05):
@@ -46,8 +48,13 @@ class Leds:
         return "BLACK"
 
     def update(self, config):
-        for b in config.data['buttons']:
-            pos = b["led_position"]
-            color = self.get_button_color(config, b['name'])
-            self.pixels[pos] = colors[color]
+        for brow in config.data['buttons']:
+            for b in brow:
+                pos = b["led_position"]
+                color = self.get_button_color(config, b['name'])
+                self.pixels[pos] = colors[color]
+                #print("{} {} {}".format(pos, color, colors[color]))
+        self.pixels.show()
+
+    def show(self):
         self.pixels.show()

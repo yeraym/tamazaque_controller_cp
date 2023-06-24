@@ -43,4 +43,3 @@ class Buttons:
                     state['special_event'] = 'long_press'
                 state['release_timestamp'] = timestamp
 
-

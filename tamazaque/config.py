@@ -6,11 +6,13 @@ class Config:
         self.cur_state = self.data['state']
         self.cur_page = self.cur_state['page']
         self.cur_buttons = self.data['pages'][self.cur_page]['buttons']
+        self.cur_expressions = self.data['pages'][self.cur_page]['expression']
 
     def update(self):
         self.cur_state = self.data['state']
         self.cur_page = self.cur_state['page']
         self.cur_buttons = self.data['pages'][self.cur_page]['buttons']
+        self.cur_expressions = self.data['pages'][self.cur_page]['expression']
 
     def get_button(self, button_name):
         return self.cur_buttons[button_name]
@@ -51,3 +53,29 @@ class Config:
     def control_action(self, control_action):
         if control_action['type'] == 'changepage':
             self.change_page(control_action['value'])
+
+    def page_up(self):
+        page_names = list(self.data['pages'].keys())
+        pos_next_page = page_names.index(self.data['state']['page'])+1
+        if pos_next_page > len(page_names)-1:
+            pos_next_page = 0
+        self.change_page(page_names[pos_next_page])
+
+    def page_down(self):
+        page_names = list(self.data['pages'].keys())
+        pos_next_page = page_names.index(self.data['state']['page'])-1
+        if pos_next_page < 0:
+            pos_next_page = len(page_names)-1
+        self.change_page(page_names[pos_next_page])
+
+    def get_expression(self, exp_name):
+        if exp_name in self.cur_expressions.keys():
+            return self.cur_expressions[exp_name]
+        else:
+            return None
+
+    def get_expression_action(self, exp_name, event):
+        e = self.get_expression(exp_name)
+        if e:
+            if event in e.keys():
+                return e[event]

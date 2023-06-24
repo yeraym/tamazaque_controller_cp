@@ -1,0 +1,1 @@
+import tamazaque_controller

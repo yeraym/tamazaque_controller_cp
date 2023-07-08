@@ -34,6 +34,22 @@ https://github.com/yeraym/tamazaque_controller_cp/assets/15657/9300e179-c97f-4f2
 
 https://github.com/yeraym/tamazaque_controller_cp/assets/15657/437ce06c-3e69-4787-ad2f-32ee27311f39
 
+With two buttons and three states we have this state diagram
+
+```mermaid
+stateDiagram-v2
+    stop: Stopped
+    rec: Recording
+    play: Playing
+    stop --> rec: b2 REC
+    rec --> rec: b2 OVR
+    play --> rec: b2 OVR
+    stop --> play: b1 PLA
+    rec --> play: b1 PLA
+    play --> stop: b1 STP
+```
+
+
 The page state remains between page chanes.
 
 https://github.com/yeraym/tamazaque_controller_cp/assets/15657/d9d0d5d9-dbfc-4f12-8cac-32a77c226c4c

@@ -26,7 +26,13 @@ You can build it with just buttons to use as usb midi controller.
 
 ### Controlling Helix looper with page states
 
-https://github.com/yeraym/tamazaque_controller_cp/assets/15657/85148ea5-9d46-4edb-9307-84a6ee310860
+
+https://github.com/yeraym/tamazaque_controller_cp/assets/15657/437ce06c-3e69-4787-ad2f-32ee27311f39
+
+The page state remain between page chanes.
+
+https://github.com/yeraym/tamazaque_controller_cp/assets/15657/d9d0d5d9-dbfc-4f12-8cac-32a77c226c4c
+
 
 
 

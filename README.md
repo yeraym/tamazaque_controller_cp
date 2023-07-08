@@ -12,7 +12,7 @@ My build uses this hardware:
 * Internal battery
 * DIN midi output
 * USB midi output
-* Expresession pedal input
+* Expresession pedal input (WIP)
 
 You can build it with just buttons to use as usb midi controller.
 
@@ -20,16 +20,21 @@ You can build it with just buttons to use as usb midi controller.
 
 * Multiple configuration pages in the same file
 * Multiple midi commands in each event
-* Press and release events
+* Press, long press and release events
 * Button state events: Pressing the button changes its state, each state has its own midi commands, button label and led color
 * Page state events: Pressing a button can change the page state, in each page state the selected buttons have its own midi commands, button label and led color
+
+
+https://github.com/yeraym/tamazaque_controller_cp/assets/15657/9300e179-c97f-4f25-ac0f-a5f47503e1b4
+
+
 
 ### Controlling Helix looper with page states
 
 
 https://github.com/yeraym/tamazaque_controller_cp/assets/15657/437ce06c-3e69-4787-ad2f-32ee27311f39
 
-The page state remain between page chanes.
+The page state remains between page chanes.
 
 https://github.com/yeraym/tamazaque_controller_cp/assets/15657/d9d0d5d9-dbfc-4f12-8cac-32a77c226c4c
 

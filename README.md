@@ -6,7 +6,7 @@ Tamazaque is a pedal midi controller that sends midi messages over usb. The main
 
 You can use it with just a CircuitPython board and some buttons connected to the GPIO pins to send midi commands over usb.
 
-![minimal](https://github.com/yeraym/tamazaque_controller_cp/assets/15657/907af6a1-58a6-47bb-a605-386d458833be)
+![minimal](https://github.com/yeraym/tamazaque_controller_cp/assets/15657/f0c208c4-a34d-48c2-981c-e4a08bdc1e41)
 
 I have built it to use as a pedal midi controller with the following features that are optional, you can modify tamzaque_controller.py to disabled them:
 
@@ -25,15 +25,11 @@ I have built it to use as a pedal midi controller with the following features th
 * Button state events: Pressing the button changes its state, each state has its own midi commands, button label and led color
 * Page state events: Pressing a button can change the page state, in each page state the selected buttons have its own midi commands, button label and led color
 
-
-https://github.com/yeraym/tamazaque_controller_cp/assets/15657/9300e179-c97f-4f25-ac0f-a5f47503e1b4
-
-
+[https://github.com/yeraym/tamazaque_controller_cp/assets/15657/9300e179-c97f-4f25-ac0f-a5f47503e1b4](https://github.com/yeraym/tamazaque_controller_cp/assets/15657/8556ee29-081b-4899-830b-929b79d702a5)
 
 ### Controlling Helix looper with page states
 
-
-https://github.com/yeraym/tamazaque_controller_cp/assets/15657/437ce06c-3e69-4787-ad2f-32ee27311f39
+https://github.com/yeraym/tamazaque_controller_cp/assets/15657/7a66e826-a8ea-418a-8306-beabef41353e
 
 With two buttons and three states we have this state diagram
 
@@ -53,31 +49,27 @@ stateDiagram-v2
 
 The page state remains between page chanes.
 
-https://github.com/yeraym/tamazaque_controller_cp/assets/15657/d9d0d5d9-dbfc-4f12-8cac-32a77c226c4c
-
-
-
+https://github.com/yeraym/tamazaque_controller_cp/assets/15657/6a2544f6-e760-4b4e-b410-86d34b3e2134
 
 ## Hardware
 
 I built it with an Adafruit Feather RP2040 borad.
 
-![tmzq_midi_controller_inside](https://github.com/yeraym/tamazaque_controller_cp/assets/15657/5aabd8ad-6b75-4e17-8656-d9592093e974)
+![tmzq_midi_controller_inside](https://github.com/yeraym/tamazaque_controller_cp/assets/15657/f1004894-b655-4a2d-9628-f95e221031f1)
 
-![tmzq_midi_controller_io](https://github.com/yeraym/tamazaque_controller_cp/assets/15657/e0eda75c-3e58-4662-8031-2d162cbce885)
+![tmzq_midi_controller_io](https://github.com/yeraym/tamazaque_controller_cp/assets/15657/e1777cc2-9683-4585-b473-6ad463f51a30)
 
-![tmzq_midi_controller_usb](https://github.com/yeraym/tamazaque_controller_cp/assets/15657/05ef5818-a3ea-4289-bcc9-b890bbc8eead)
+![tmzq_midi_controller_usb](https://github.com/yeraym/tamazaque_controller_cp/assets/15657/59d62406-1f66-4a00-b4f9-91ad5f0d43d9)
 
 ### Build
 
 I built a little carrier with some male-female long headers and a spot prototyping board to be able to swap the feather with any other compatible one.
 
-![carrier](https://github.com/yeraym/tamazaque_controller_cp/assets/15657/01021ad3-de39-4b57-b331-2e723bf25959)
+![carrier](https://github.com/yeraym/tamazaque_controller_cp/assets/15657/8c0c94c8-6e66-4e5f-b7e3-4622d1d96baa)
 
 You can see in the backside it has two rows which I use for ground a +V connections.
 
-![carrier_back](https://github.com/yeraym/tamazaque_controller_cp/assets/15657/89d84c2a-a986-4466-9453-3f676f7910ef)
-
+![carrier_back](https://github.com/yeraym/tamazaque_controller_cp/assets/15657/cbfcb7a9-6f0d-4a3b-acb7-ed9e09545fdf)
 
  ## Software
  

@@ -1,20 +1,21 @@
 # Tamazaque, json configurable midi controller built with CircuitPython
 
-Tamazaque is a pedal midi controller. The main feature is the json configuration file.
+Tamazaque is a pedal midi controller that sends midi messages over usb. The main feature is the json configuration file. This file defines the number of buttons and their GPIO pins, it also contains the midi messages associated with each button. Each button can send multiple midi messages in each of these events: press, release and long press. The configuration support multiple configuration pages, with each page containing new set of messages associated to the buttons, there is also an internal command to change the active page, this command can be fired by any button event.
 
 ![tmzq_midi_controller](https://github.com/yeraym/tamazaque_controller_cp/assets/15657/b1c3af25-ba16-49cc-abce-f1358898b884)
 
-My build uses this hardware:
+You can use it with just a CircuitPython board and some buttons connected to the GPIO pins to send midi commands over usb.
+
+![minimal](https://github.com/yeraym/tamazaque_controller_cp/assets/15657/907af6a1-58a6-47bb-a605-386d458833be)
+
+I have built it to use as a pedal midi controller with the following features that are optional, you can modify tamzaque_controller.py to disabled them:
+
 * OLED screen
-* 8 stomp buttons
 * 8 rgb neoleds
 * 1 clickable rotary controller
 * Internal battery
 * DIN midi output
-* USB midi output
-* Expresession pedal input (WIP)
-
-You can build it with just buttons to use as usb midi controller.
+* Expresession pedal input (work in progress)
 
 ## Flexible configuration
 
@@ -59,9 +60,24 @@ https://github.com/yeraym/tamazaque_controller_cp/assets/15657/d9d0d5d9-dbfc-4f1
 
 ## Hardware
 
-* Adafruit Feather RP2040
+I built it with an Adafruit Feather RP2040 borad.
 
 ![tmzq_midi_controller_inside](https://github.com/yeraym/tamazaque_controller_cp/assets/15657/5aabd8ad-6b75-4e17-8656-d9592093e974)
+
+![tmzq_midi_controller_io](https://github.com/yeraym/tamazaque_controller_cp/assets/15657/e0eda75c-3e58-4662-8031-2d162cbce885)
+
+![tmzq_midi_controller_usb](https://github.com/yeraym/tamazaque_controller_cp/assets/15657/05ef5818-a3ea-4289-bcc9-b890bbc8eead)
+
+### Build
+
+I built a little carrier with some male-female long headers and a spot prototyping board to be able to swap the feather with any other compatible one.
+
+![carrier](https://github.com/yeraym/tamazaque_controller_cp/assets/15657/01021ad3-de39-4b57-b331-2e723bf25959)
+
+You can see in the backside it has two rows which I use for ground a +V connections.
+
+![carrier_back](https://github.com/yeraym/tamazaque_controller_cp/assets/15657/89d84c2a-a986-4466-9453-3f676f7910ef)
+
 
  ## Software
  

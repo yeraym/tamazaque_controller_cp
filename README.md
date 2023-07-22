@@ -2,7 +2,7 @@
 
 Tamazaque is a pedal midi controller that sends midi messages over usb. The main feature is the json configuration file. This file defines the number of buttons and their GPIO pins, it also contains the midi messages associated with each button. Each button can send multiple midi messages in each of these events: press, release and long press. The configuration support multiple configuration pages, with each page containing new set of messages associated to the buttons, there is also an internal command to change the active page, this command can be fired by any button event.
 
-![tmzq_midi_controller](https://github.com/yeraym/tamazaque_controller_cp/assets/15657/b1c3af25-ba16-49cc-abce-f1358898b884)
+![tmzq_midi_controller](https://github.com/yeraym/tamazaque_controller_cp/assets/15657/eb1230da-8f0a-4990-aa3a-dd4a1b236742)
 
 You can use it with just a CircuitPython board and some buttons connected to the GPIO pins to send midi commands over usb.
 

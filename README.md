@@ -82,3 +82,9 @@ You can see in the backside it has two rows which I use for ground a +V connecti
  ## Software
  
  Adafruit CircuitPython 8.0.5 on 2023-03-31
+
+ ### To-Do
+
+ * I need to finish the code for the expression pedal input.
+ * It would be nice to build a menu module using the rotary controller to configure some parameters on the fly or select other configuration files
+ * I am developing an editor for the configuration files but I'm not sure when it would be finished as I really don't need it

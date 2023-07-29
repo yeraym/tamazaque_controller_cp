@@ -4,10 +4,6 @@ Tamazaque is a pedal midi controller that sends midi messages over usb. The main
 
 ![tmzq_midi_controller](https://github.com/yeraym/tamazaque_controller_cp/assets/15657/eb1230da-8f0a-4990-aa3a-dd4a1b236742)
 
-You can use it with just a CircuitPython board and some buttons connected to the GPIO pins to send midi commands over usb.
-
-![minimal](https://github.com/yeraym/tamazaque_controller_cp/assets/15657/f0c208c4-a34d-48c2-981c-e4a08bdc1e41)
-
 I have built it to use as a pedal midi controller with the following features that are optional, you can modify tamzaque_controller.py to disabled them:
 
 * OLED screen
